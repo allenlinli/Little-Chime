@@ -1,0 +1,6 @@
+framework module Pods_Little_ChimeTests {
+  umbrella header "Pods-Little ChimeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

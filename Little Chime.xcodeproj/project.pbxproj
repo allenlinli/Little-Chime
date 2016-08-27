@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9EBFF9D78DFEF978FAFFFD20 /* Pods_Little_Chime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD8424C4D71B80F5913F004 /* Pods_Little_Chime.framework */; };
+		D54055904C5305CC0317F5C4 /* Pods_Little_ChimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FF4D684BADB1308EB27BC9 /* Pods_Little_ChimeTests.framework */; };
 		E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463D71D7165BA00102251 /* AppDelegate.swift */; };
 		E90463DA1D7165BA00102251 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463D91D7165BA00102251 /* ViewController.swift */; };
 		E90463DD1D7165BA00102251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90463DB1D7165BA00102251 /* Main.storyboard */; };
 		E90463DF1D7165BA00102251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90463DE1D7165BA00102251 /* Assets.xcassets */; };
 		E90463E21D7165BA00102251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90463E01D7165BA00102251 /* LaunchScreen.storyboard */; };
 		E90463ED1D7165BB00102251 /* Little_ChimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463EC1D7165BB00102251 /* Little_ChimeTests.swift */; };
+		E90463F81D717EE200102251 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E90463F71D717EE200102251 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EE73027C8E659485BB41A6E /* Pods-Little Chime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Chime.release.xcconfig"; path = "Pods/Target Support Files/Pods-Little Chime/Pods-Little Chime.release.xcconfig"; sourceTree = "<group>"; };
+		4A023CFC1292669B5E8A9DCC /* Pods-Little ChimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little ChimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Little ChimeTests/Pods-Little ChimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5640C94E679A206AFC915E12 /* Pods-Little ChimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little ChimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Little ChimeTests/Pods-Little ChimeTests.release.xcconfig"; sourceTree = "<group>"; };
+		9AD2942ABEEFFAAA7D2DE522 /* Pods-Little Chime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Chime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Little Chime/Pods-Little Chime.debug.xcconfig"; sourceTree = "<group>"; };
+		AAD8424C4D71B80F5913F004 /* Pods_Little_Chime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Little_Chime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2FF4D684BADB1308EB27BC9 /* Pods_Little_ChimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Little_ChimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90463D41D7165BA00102251 /* Little Chime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Chime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90463D71D7165BA00102251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E90463D91D7165BA00102251 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +45,7 @@
 		E90463E81D7165BB00102251 /* Little ChimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Little ChimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90463EC1D7165BB00102251 /* Little_ChimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_ChimeTests.swift; sourceTree = "<group>"; };
 		E90463EE1D7165BB00102251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E90463F71D717EE200102251 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EBFF9D78DFEF978FAFFFD20 /* Pods_Little_Chime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +61,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D54055904C5305CC0317F5C4 /* Pods_Little_ChimeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8CE3C7E410E89C7F94FF15F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AD2942ABEEFFAAA7D2DE522 /* Pods-Little Chime.debug.xcconfig */,
+				0EE73027C8E659485BB41A6E /* Pods-Little Chime.release.xcconfig */,
+				4A023CFC1292669B5E8A9DCC /* Pods-Little ChimeTests.debug.xcconfig */,
+				5640C94E679A206AFC915E12 /* Pods-Little ChimeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD81B7ABFEBD49C418FC6C03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAD8424C4D71B80F5913F004 /* Pods_Little_Chime.framework */,
+				C2FF4D684BADB1308EB27BC9 /* Pods_Little_ChimeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E90463CB1D7165BA00102251 = {
 			isa = PBXGroup;
 			children = (
 				E90463D61D7165BA00102251 /* Little Chime */,
 				E90463EB1D7165BB00102251 /* Little ChimeTests */,
 				E90463D51D7165BA00102251 /* Products */,
+				A8CE3C7E410E89C7F94FF15F /* Pods */,
+				AD81B7ABFEBD49C418FC6C03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +116,7 @@
 				E90463DB1D7165BA00102251 /* Main.storyboard */,
 				E90463DE1D7165BA00102251 /* Assets.xcassets */,
 				E90463E01D7165BA00102251 /* LaunchScreen.storyboard */,
+				E90463F71D717EE200102251 /* GoogleService-Info.plist */,
 				E90463E31D7165BA00102251 /* Info.plist */,
 			);
 			path = "Little Chime";
@@ -103,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E90463F11D7165BB00102251 /* Build configuration list for PBXNativeTarget "Little Chime" */;
 			buildPhases = (
+				D4BE14763F973DA2C669AFAA /* [CP] Check Pods Manifest.lock */,
 				E90463D01D7165BA00102251 /* Sources */,
 				E90463D11D7165BA00102251 /* Frameworks */,
 				E90463D21D7165BA00102251 /* Resources */,
+				DF8E93164F5772DC9F974AD2 /* [CP] Embed Pods Frameworks */,
+				69F1787BAE692FB4A46CB341 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E90463F41D7165BB00102251 /* Build configuration list for PBXNativeTarget "Little ChimeTests" */;
 			buildPhases = (
+				9166CD8C940FAB0DC59E76DF /* [CP] Check Pods Manifest.lock */,
 				E90463E41D7165BB00102251 /* Sources */,
 				E90463E51D7165BB00102251 /* Frameworks */,
 				E90463E61D7165BB00102251 /* Resources */,
+				E23E1BB18C8DCE37E65ABBA0 /* [CP] Embed Pods Frameworks */,
+				D21501F1125E5380F77AF05A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90463E21D7165BA00102251 /* LaunchScreen.storyboard in Resources */,
+				E90463F81D717EE200102251 /* GoogleService-Info.plist in Resources */,
 				E90463DF1D7165BA00102251 /* Assets.xcassets in Resources */,
 				E90463DD1D7165BA00102251 /* Main.storyboard in Resources */,
 			);
@@ -195,6 +237,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69F1787BAE692FB4A46CB341 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Little Chime/Pods-Little Chime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9166CD8C940FAB0DC59E76DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D21501F1125E5380F77AF05A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Little ChimeTests/Pods-Little ChimeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4BE14763F973DA2C669AFAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF8E93164F5772DC9F974AD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Little Chime/Pods-Little Chime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E23E1BB18C8DCE37E65ABBA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Little ChimeTests/Pods-Little ChimeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E90463D01D7165BA00102251 /* Sources */ = {
@@ -337,6 +472,7 @@
 		};
 		E90463F21D7165BB00102251 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AD2942ABEEFFAAA7D2DE522 /* Pods-Little Chime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
@@ -350,6 +486,7 @@
 		};
 		E90463F31D7165BB00102251 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EE73027C8E659485BB41A6E /* Pods-Little Chime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
@@ -363,6 +500,7 @@
 		};
 		E90463F51D7165BB00102251 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A023CFC1292669B5E8A9DCC /* Pods-Little ChimeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -378,6 +516,7 @@
 		};
 		E90463F61D7165BB00102251 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5640C94E679A206AFC915E12 /* Pods-Little ChimeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -410,6 +549,7 @@
 				E90463F31D7165BB00102251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E90463F41D7165BB00102251 /* Build configuration list for PBXNativeTarget "Little ChimeTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +558,7 @@
 				E90463F61D7165BB00102251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
