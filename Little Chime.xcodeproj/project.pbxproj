@@ -111,13 +111,9 @@
 		E90463D61D7165BA00102251 /* Little Chime */ = {
 			isa = PBXGroup;
 			children = (
-				E90463D71D7165BA00102251 /* AppDelegate.swift */,
-				E90463D91D7165BA00102251 /* ViewController.swift */,
 				E90463DB1D7165BA00102251 /* Main.storyboard */,
-				E90463DE1D7165BA00102251 /* Assets.xcassets */,
-				E90463E01D7165BA00102251 /* LaunchScreen.storyboard */,
-				E90463F71D717EE200102251 /* GoogleService-Info.plist */,
-				E90463E31D7165BA00102251 /* Info.plist */,
+				E90463D91D7165BA00102251 /* ViewController.swift */,
+				E90463F91D71817000102251 /* Support Files */,
 			);
 			path = "Little Chime";
 			sourceTree = "<group>";
@@ -129,6 +125,18 @@
 				E90463EE1D7165BB00102251 /* Info.plist */,
 			);
 			path = "Little ChimeTests";
+			sourceTree = "<group>";
+		};
+		E90463F91D71817000102251 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E90463D71D7165BA00102251 /* AppDelegate.swift */,
+				E90463DE1D7165BA00102251 /* Assets.xcassets */,
+				E90463E01D7165BA00102251 /* LaunchScreen.storyboard */,
+				E90463F71D717EE200102251 /* GoogleService-Info.plist */,
+				E90463E31D7165BA00102251 /* Info.plist */,
+			);
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
