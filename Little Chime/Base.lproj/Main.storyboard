@@ -20,8 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Little Chime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJf-nU-b6l">
-                                <frame key="frameInset" minX="137" minY="20" width="96" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Little Chime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJf-nU-b6l">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="cgo-TT-1fK"/>
                                 </constraints>
@@ -31,17 +30,17 @@
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="FqN-7S-UyW">
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5kp-gI-hDw">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5kp-gI-hDw">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBs-fm-Hcp">
-                                                <frame key="frameInset" width="20" height="42"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBs-fm-Hcp">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="mns-xg-YUz"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSn-yz-Z75">
-                                                <frame key="frameInset" minX="45" width="51" height="42"/>
-                                            </switch>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSn-yz-Z75"/>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="izX-CO-Cc8">
@@ -104,14 +103,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ytf-fT-aBV">
                                 <color key="backgroundColor" red="1" green="0.76940533463150984" blue="0.98634559673815314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ytf-fT-aBV" secondAttribute="height" multiplier="1:1" id="SOy-rG-Wkm"/>
+                                    <constraint firstAttribute="width" secondItem="ytf-fT-aBV" secondAttribute="height" multiplier="1:1" priority="750" id="SOy-rG-Wkm"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ytf-fT-aBV" firstAttribute="top" secondItem="HJf-nU-b6l" secondAttribute="bottom" constant="28" id="3it-Oe-aia"/>
+                            <constraint firstItem="HJf-nU-b6l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9OF-xC-I3D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ytf-fT-aBV" secondAttribute="trailing" constant="72" id="AUp-bu-1eI"/>
+                            <constraint firstItem="FqN-7S-UyW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ytf-fT-aBV" secondAttribute="bottom" priority="950" constant="24" id="GWg-Ap-eVW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FqN-7S-UyW" secondAttribute="bottom" constant="22" id="fGB-Zc-Cty"/>
                             <constraint firstItem="FqN-7S-UyW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="gBm-kJ-GTE"/>
                             <constraint firstItem="ytf-fT-aBV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="pq2-5q-p6t"/>
