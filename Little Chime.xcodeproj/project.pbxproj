@@ -16,6 +16,8 @@
 		E90463E21D7165BA00102251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90463E01D7165BA00102251 /* LaunchScreen.storyboard */; };
 		E90463ED1D7165BB00102251 /* Little_ChimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463EC1D7165BB00102251 /* Little_ChimeTests.swift */; };
 		E90463F81D717EE200102251 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E90463F71D717EE200102251 /* GoogleService-Info.plist */; };
+		E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FC1D718D1500102251 /* ChimeManager.swift */; };
+		E90463FF1D71A33400102251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FE1D71A33400102251 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		E90463EC1D7165BB00102251 /* Little_ChimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_ChimeTests.swift; sourceTree = "<group>"; };
 		E90463EE1D7165BB00102251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E90463F71D717EE200102251 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E90463FC1D718D1500102251 /* ChimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChimeManager.swift; sourceTree = "<group>"; };
+		E90463FE1D71A33400102251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 			children = (
 				E90463DB1D7165BA00102251 /* Main.storyboard */,
 				E90463D91D7165BA00102251 /* ViewController.swift */,
+				E90463FC1D718D1500102251 /* ChimeManager.swift */,
+				E90463FE1D71A33400102251 /* Constants.swift */,
 				E90463F91D71817000102251 /* Support Files */,
 			);
 			path = "Little Chime";
@@ -344,8 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */,
 				E90463DA1D7165BA00102251 /* ViewController.swift in Sources */,
 				E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */,
+				E90463FF1D71A33400102251 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
