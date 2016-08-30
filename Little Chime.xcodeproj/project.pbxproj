@@ -10,7 +10,6 @@
 		9EBFF9D78DFEF978FAFFFD20 /* Pods_Little_Chime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD8424C4D71B80F5913F004 /* Pods_Little_Chime.framework */; };
 		D54055904C5305CC0317F5C4 /* Pods_Little_ChimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FF4D684BADB1308EB27BC9 /* Pods_Little_ChimeTests.framework */; };
 		E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463D71D7165BA00102251 /* AppDelegate.swift */; };
-		E90463DA1D7165BA00102251 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463D91D7165BA00102251 /* ViewController.swift */; };
 		E90463DD1D7165BA00102251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90463DB1D7165BA00102251 /* Main.storyboard */; };
 		E90463DF1D7165BA00102251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90463DE1D7165BA00102251 /* Assets.xcassets */; };
 		E90463E21D7165BA00102251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90463E01D7165BA00102251 /* LaunchScreen.storyboard */; };
@@ -18,6 +17,8 @@
 		E90463F81D717EE200102251 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E90463F71D717EE200102251 /* GoogleService-Info.plist */; };
 		E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FC1D718D1500102251 /* ChimeManager.swift */; };
 		E90463FF1D71A33400102251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FE1D71A33400102251 /* Constants.swift */; };
+		E90464031D73EC4100102251 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90464021D73EC4100102251 /* AuthenticationViewController.swift */; };
+		E90464051D75242B00102251 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90464041D75242B00102251 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		C2FF4D684BADB1308EB27BC9 /* Pods_Little_ChimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Little_ChimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90463D41D7165BA00102251 /* Little Chime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Chime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90463D71D7165BA00102251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E90463D91D7165BA00102251 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E90463DC1D7165BA00102251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E90463DE1D7165BA00102251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90463E11D7165BA00102251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +50,8 @@
 		E90463F71D717EE200102251 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E90463FC1D718D1500102251 /* ChimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChimeManager.swift; sourceTree = "<group>"; };
 		E90463FE1D71A33400102251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E90464021D73EC4100102251 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		E90464041D75242B00102251 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				E90463DB1D7165BA00102251 /* Main.storyboard */,
-				E90463D91D7165BA00102251 /* ViewController.swift */,
+				E90464041D75242B00102251 /* MainViewController.swift */,
+				E90464021D73EC4100102251 /* AuthenticationViewController.swift */,
 				E90463FC1D718D1500102251 /* ChimeManager.swift */,
 				E90463FE1D71A33400102251 /* Constants.swift */,
 				E90463F91D71817000102251 /* Support Files */,
@@ -351,9 +354,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */,
-				E90463DA1D7165BA00102251 /* ViewController.swift in Sources */,
+				E90464031D73EC4100102251 /* AuthenticationViewController.swift in Sources */,
 				E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */,
 				E90463FF1D71A33400102251 /* Constants.swift in Sources */,
+				E90464051D75242B00102251 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +498,7 @@
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
 				INFOPLIST_FILE = "Little Chime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.raccoonism.Little-Chime";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raccoonism.littlechime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -508,7 +512,7 @@
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
 				INFOPLIST_FILE = "Little Chime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.raccoonism.Little-Chime";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raccoonism.littlechime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
