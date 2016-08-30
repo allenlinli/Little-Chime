@@ -17,8 +17,8 @@
 		E90463F81D717EE200102251 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E90463F71D717EE200102251 /* GoogleService-Info.plist */; };
 		E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FC1D718D1500102251 /* ChimeManager.swift */; };
 		E90463FF1D71A33400102251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FE1D71A33400102251 /* Constants.swift */; };
-		E90464031D73EC4100102251 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90464021D73EC4100102251 /* AuthenticationViewController.swift */; };
 		E90464051D75242B00102251 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90464041D75242B00102251 /* MainViewController.swift */; };
+		E990AE4F1D7557A300E1187D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990AE4E1D7557A300E1187D /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +50,8 @@
 		E90463F71D717EE200102251 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E90463FC1D718D1500102251 /* ChimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChimeManager.swift; sourceTree = "<group>"; };
 		E90463FE1D71A33400102251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E90464021D73EC4100102251 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E90464041D75242B00102251 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E990AE4E1D7557A300E1187D /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 			children = (
 				E90463DB1D7165BA00102251 /* Main.storyboard */,
 				E90464041D75242B00102251 /* MainViewController.swift */,
-				E90464021D73EC4100102251 /* AuthenticationViewController.swift */,
+				E990AE4E1D7557A300E1187D /* SignInViewController.swift */,
 				E90463FC1D718D1500102251 /* ChimeManager.swift */,
 				E90463FE1D71A33400102251 /* Constants.swift */,
 				E90463F91D71817000102251 /* Support Files */,
@@ -354,9 +354,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */,
-				E90464031D73EC4100102251 /* AuthenticationViewController.swift in Sources */,
 				E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */,
 				E90463FF1D71A33400102251 /* Constants.swift in Sources */,
+				E990AE4F1D7557A300E1187D /* SignInViewController.swift in Sources */,
 				E90464051D75242B00102251 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +417,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -466,6 +467,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

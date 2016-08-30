@@ -119,10 +119,62 @@
                             <constraint firstItem="dSn-yz-Z75" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="18" id="yHV-3c-Hub"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="plZ-5V-QkV" kind="presentation" identifier="ShowSignInVCID" id="3ln-bl-yFa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="qEf-Jl-Ma2">
+            <objects>
+                <viewController id="plZ-5V-QkV" customClass="SignInViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ji7-bH-Qhl"/>
+                        <viewControllerLayoutGuide type="bottom" id="9sj-Cg-5Sy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TWh-Cu-pEt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONa-SU-rcu">
+                                <frame key="frameInset" minX="90" minY="394" width="195" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lJ7-wn-uT2">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-4I-IrX">
+                                        <state key="normal" title="Google"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmH-ZR-MuV">
+                                        <state key="normal" title="Facebook"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGN-aX-2kG">
+                                <frame key="frameInset" minX="90" minY="445" width="195" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lJ7-wn-uT2" firstAttribute="leading" secondItem="TWh-Cu-pEt" secondAttribute="leadingMargin" constant="44" id="P6T-zP-Tnd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lJ7-wn-uT2" secondAttribute="trailing" constant="44" id="SaP-uL-xb8"/>
+                            <constraint firstItem="9sj-Cg-5Sy" firstAttribute="top" secondItem="lJ7-wn-uT2" secondAttribute="bottom" constant="66" id="frv-GL-SZ0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cN1-92-6lt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="734.48275862068976"/>
         </scene>
     </scenes>
 </document>

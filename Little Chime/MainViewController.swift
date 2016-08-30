@@ -24,17 +24,11 @@ class MainViewController: UIViewController {
     
         // MARK: Auth
         //If auth is not established, then pop up SignInVC
-        authStateHandle = FIRAuth.auth()?.addStateDidChangeListener{ (auth, user) in
-            print("did addAuthStateDidChangeListener")
-            
-        }
-        
-        //if FIRAuth.currentUser
-        //}
-        
-        if FIRAuth.auth()?.currentUser == nil
-        {
-            
+        authStateHandle = FIRAuth.auth()?.addStateDidChangeListener{ [weak self](auth, user) in
+            if user == nil
+            {
+                self?.performSegue(withIdentifier: "ShowSignInVCID", sender: self)
+            }
         }
     }
     
