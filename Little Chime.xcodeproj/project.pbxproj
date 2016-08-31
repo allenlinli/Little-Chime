@@ -53,6 +53,8 @@
 		E90463FE1D71A33400102251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E90464041D75242B00102251 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		E9866D221D7706AB001D7291 /* Little Chime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Little Chime-Bridging-Header.h"; sourceTree = "<group>"; };
+		E9866D511D771D9B001D7291 /* Little Chime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Little Chime.entitlements"; sourceTree = "<group>"; };
 		E990AE4E1D7557A300E1187D /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 		E90463D61D7165BA00102251 /* Little Chime */ = {
 			isa = PBXGroup;
 			children = (
+				E9866D511D771D9B001D7291 /* Little Chime.entitlements */,
 				E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */,
 				E90463DB1D7165BA00102251 /* Main.storyboard */,
 				E90464041D75242B00102251 /* MainViewController.swift */,
@@ -142,6 +145,7 @@
 		E90463F91D71817000102251 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9866D221D7706AB001D7291 /* Little Chime-Bridging-Header.h */,
 				E90463D71D7165BA00102251 /* AppDelegate.swift */,
 				E90463DE1D7165BA00102251 /* Assets.xcassets */,
 				E90463E01D7165BA00102251 /* LaunchScreen.storyboard */,
@@ -210,6 +214,11 @@
 						DevelopmentTeam = 8Z2W5ZDA6N;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					E90463E71D7165BB00102251 = {
 						CreatedOnToolsVersion = 8.0;
@@ -506,11 +515,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Little Chime/Little Chime.entitlements";
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
 				INFOPLIST_FILE = "Little Chime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raccoonism.littlechime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Little Chime/Little Chime-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -522,11 +533,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Little Chime/Little Chime.entitlements";
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
 				INFOPLIST_FILE = "Little Chime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raccoonism.littlechime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Little Chime/Little Chime-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

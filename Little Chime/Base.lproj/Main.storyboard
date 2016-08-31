@@ -139,19 +139,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONa-SU-rcu">
-                                <frame key="frameInset" minX="85" minY="439" width="204" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-jd-buU">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONa-SU-rcu">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGN-aX-2kG">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="8cN-4o-Qeg"/>
+                                </constraints>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lJ7-wn-uT2">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-4I-IrX">
                                         <state key="normal" title="Google"/>
                                         <connections>
                                             <action selector="signInWithGoogle:" destination="plZ-5V-QkV" eventType="touchUpInside" id="Ag5-lO-KHG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ7-Wo-TsX">
+                                        <state key="normal" title="SignIn"/>
+                                        <connections>
+                                            <action selector="signInWithEmail:" destination="plZ-5V-QkV" eventType="touchUpInside" id="W0A-ac-u9U"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmH-ZR-MuV">
@@ -162,27 +178,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ7-Wo-TsX">
-                                <frame key="frameInset" minX="87" minY="533" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SignIn"/>
-                                <connections>
-                                    <action selector="signInWithEmail:" destination="plZ-5V-QkV" eventType="touchUpInside" id="W0A-ac-u9U"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGN-aX-2kG">
-                                <frame key="frameInset" minX="85" minY="486" width="204" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="SwM-jd-buU" secondAttribute="trailing" constant="44" id="5Ek-oB-8H8"/>
+                            <constraint firstItem="SwM-jd-buU" firstAttribute="leading" secondItem="TWh-Cu-pEt" secondAttribute="leadingMargin" constant="44" id="EcM-zG-LJF"/>
                             <constraint firstItem="lJ7-wn-uT2" firstAttribute="leading" secondItem="TWh-Cu-pEt" secondAttribute="leadingMargin" constant="44" id="P6T-zP-Tnd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lJ7-wn-uT2" secondAttribute="trailing" constant="44" id="SaP-uL-xb8"/>
                             <constraint firstItem="9sj-Cg-5Sy" firstAttribute="top" secondItem="lJ7-wn-uT2" secondAttribute="bottom" constant="66" id="frv-GL-SZ0"/>
+                            <constraint firstItem="lJ7-wn-uT2" firstAttribute="top" secondItem="SwM-jd-buU" secondAttribute="bottom" constant="44" id="ryS-Z7-KhO"/>
                         </constraints>
                     </view>
                 </viewController>

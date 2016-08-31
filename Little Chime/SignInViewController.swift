@@ -10,12 +10,14 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 import Firebase
+import FBSDKLoginKit
 
 class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     @IBAction func signInWithEmail(_ sender: AnyObject) {
@@ -28,24 +30,23 @@ class SignInViewController: UIViewController {
         GIDSignIn.sharedInstance().signIn()
     }
     @IBAction func signInWithFacebook(_ sender: AnyObject) {
-        /*
-        let loginManager = FBSDKLoginManager()
-        loginManager.logInWithReadPermissions(["email"], fromViewController: self, handler: { (result, error) in
+        FBSDKLoginManager().logIn(withReadPermissions: [ "public_profile", "email" ], from: self, handler: { [weak self] (result, error) in
             if let error = error {
-                self.showMessagePrompt(error.localizedDescription)
-            } else if(result.isCancelled) {
-                print("FBLogin cancelled")
-            } else {
-                // [START headless_facebook_auth]
-                let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
-                // [END headless_facebook_auth]
-                self.firebaseLogin(credential)
+                self?.showPrompt(ofMessage: error.localizedDescription)
+                return
             }
+            else if (result?.isCancelled)! {
+                print("FBLogin cancelled")
+                return
+            }
+            
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            self?.firebaseLogin(with: credential)
         })
- */
     }
 }
 
+// [START headless_google_auth]
 extension SignInViewController: GIDSignInUIDelegate
 {
     /*
@@ -76,15 +77,14 @@ extension SignInViewController: GIDSignInUIDelegate
      - (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController;
      */
 }
+// [END headless_google_auth]
 
+// [START headless_google_auth]
 extension SignInViewController: GIDSignInDelegate
 {
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
+        if error != nil {
+            showPrompt(ofMessage: error.localizedDescription)
             return
         }
         
@@ -93,64 +93,35 @@ extension SignInViewController: GIDSignInDelegate
             return
         }
         
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication.idToken)!,
-                                                          accessToken: (authentication.accessToken)!)
-        
-        // [START_EXCLUDE]
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         firebaseLogin(with: credential)
-        // [END_EXCLUDE]
     }
-
-    /*
-     // A protocol implemented by the delegate of |GIDSignIn| to receive a refresh token or an error.
-     @protocol GIDSignInDelegate <NSObject>
-     
-     // The sign-in flow has finished and was successful if |error| is |nil|.
-     - (void)signIn:(GIDSignIn *)signIn
-     didSignInForUser:(GIDGoogleUser *)user
-     withError:(NSError *)error;
-     
-     @optional
-     
-     // Finished disconnecting |user| from the app successfully if |error| is |nil|.
-     - (void)signIn:(GIDSignIn *)signIn
-     didDisconnectWithUser:(GIDGoogleUser *)user
-     withError:(NSError *)error;
-     
-     @end
-     */
+    
     func firebaseLogin(with credential: FIRAuthCredential) {
         showSpinner(with: { [weak self]() in
             if let user = FIRAuth.auth()?.currentUser {
-                // [START link_credential]
                 user.link(with: credential) { (user, error) in
-                    // [START_EXCLUDE]
                     self?.hideSpinner(with: { [weak self]() in
-                        if let error = error {
-                            self?.showPrompt(ofMessage: error.localizedDescription)
+                        if error != nil {
+                            self?.showPrompt(ofMessage: error!.localizedDescription)
                             return
                         }
                     })
-                    // [END_EXCLUDE]
                 }
-                // [END link_credential]
-            } else {
-                // [START signin_credential]
+            }
+            else {
                 FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-                    // [START_EXCLUDE]
                     self?.hideSpinner(with: { [weak self]() in
-                        if let error = error {
-                            self?.showPrompt(ofMessage: error.localizedDescription)
+                        if error != nil {
+                            self?.showPrompt(ofMessage: error!.localizedDescription)
                             return
                         }
                     })
-                    // [END_EXCLUDE]
                 }
-                // [END signin_credential]
             }
         })
     }
 }
-
+// [END headless_google_auth]
 
 
