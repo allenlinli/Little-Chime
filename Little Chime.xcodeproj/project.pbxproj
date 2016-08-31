@@ -18,6 +18,7 @@
 		E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FC1D718D1500102251 /* ChimeManager.swift */; };
 		E90463FF1D71A33400102251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FE1D71A33400102251 /* Constants.swift */; };
 		E90464051D75242B00102251 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90464041D75242B00102251 /* MainViewController.swift */; };
+		E9866D211D7583E8001D7291 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */; };
 		E990AE4F1D7557A300E1187D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990AE4E1D7557A300E1187D /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		E90463FC1D718D1500102251 /* ChimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChimeManager.swift; sourceTree = "<group>"; };
 		E90463FE1D71A33400102251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E90464041D75242B00102251 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		E990AE4E1D7557A300E1187D /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 		E90463D61D7165BA00102251 /* Little Chime */ = {
 			isa = PBXGroup;
 			children = (
+				E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */,
 				E90463DB1D7165BA00102251 /* Main.storyboard */,
 				E90464041D75242B00102251 /* MainViewController.swift */,
 				E990AE4E1D7557A300E1187D /* SignInViewController.swift */,
@@ -205,6 +208,7 @@
 					E90463D31D7165BA00102251 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8Z2W5ZDA6N;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					E90463E71D7165BB00102251 = {
@@ -357,6 +361,7 @@
 				E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */,
 				E90463FF1D71A33400102251 /* Constants.swift in Sources */,
 				E990AE4F1D7557A300E1187D /* SignInViewController.swift in Sources */,
+				E9866D211D7583E8001D7291 /* UIViewController+Alerts.swift in Sources */,
 				E90464051D75242B00102251 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,11 +505,13 @@
 			baseConfigurationReference = 9AD2942ABEEFFAAA7D2DE522 /* Pods-Little Chime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
 				INFOPLIST_FILE = "Little Chime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raccoonism.littlechime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -514,6 +521,7 @@
 			baseConfigurationReference = 0EE73027C8E659485BB41A6E /* Pods-Little Chime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
 				INFOPLIST_FILE = "Little Chime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
