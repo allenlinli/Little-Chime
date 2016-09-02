@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-        
         return true
     }
     

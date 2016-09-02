@@ -120,7 +120,7 @@ extension UIViewController
     func hideSpinner(with completion: ( ()->Void )? )
     {
         let pleaseWaitAlert = objc_getAssociatedObject(self, &kPleaseWaitAssociatedObjectKey) as! UIAlertController
-        pleaseWaitAlert.dismiss(animated: true, completion: nil)
+        pleaseWaitAlert.dismiss(animated: true, completion: completion)
         
         objc_setAssociatedObject(self, &kPleaseWaitAssociatedObjectKey, nil, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }

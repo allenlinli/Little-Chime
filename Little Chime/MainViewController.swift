@@ -28,6 +28,12 @@ class MainViewController: UIViewController {
             if user == nil
             {
                 self?.performSegue(withIdentifier: "ShowSignInVCID", sender: self)
+                return
+            }
+            
+            if let strongSelf = self
+            {
+                _ = strongSelf.navigationController?.popToViewController(strongSelf, animated: true)
             }
         }
     }

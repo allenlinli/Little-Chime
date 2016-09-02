@@ -14,6 +14,8 @@ import FBSDKLoginKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,8 +23,57 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInWithEmail(_ sender: AnyObject) {
+        guard let email = emailTextField.text else {
+            showPrompt(ofMessage: "Please Fill in Email.")
+            return
+        }
+        guard let password = passwordTextField.text else {
+            showPrompt(ofMessage: "Please Fill in password.")
+            return
+        }
+        
+        showSpinner { 
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
+                self?.hideSpinner(with: { 
+                    if error != nil {
+                        self?.showPrompt(ofMessage: error!.localizedDescription)
+                        return
+                    }
+                    
+                    //post signin succeeded notification
+                    self?.dismiss(animated: true, completion: nil)
+                })
+            })
+        }
     }
     
+    @IBAction func signupWithEmail(_ sender: AnyObject)
+    {
+        showPrompt(ofTextInputWithMessage: "Email") { [weak self] (userPressedOK, email) in
+            if (!userPressedOK || email!.characters.count == 0) {
+                return;
+            }
+            
+            self?.showPrompt(ofTextInputWithMessage: "Password", completion: { [weak self] (userPressedOK, password) in
+                if (!userPressedOK || password!.characters.count == 0) {
+                    return;
+                }
+                
+                self?.showSpinner(with: {
+                    FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { [weak self] (user, error) in
+                        self?.hideSpinner(with: { [weak self] in
+                            if error != nil {
+                                self?.showPrompt(ofMessage: error!.localizedDescription)
+                                return
+                            }
+                            
+                            self?.dismiss(animated: true, completion: nil)
+                        })
+                    })
+                })
+            })
+        }
+    }
     @IBAction func signInWithGoogle(_ sender: AnyObject) {
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -31,11 +82,11 @@ class SignInViewController: UIViewController {
     }
     @IBAction func signInWithFacebook(_ sender: AnyObject) {
         FBSDKLoginManager().logIn(withReadPermissions: [ "public_profile", "email" ], from: self, handler: { [weak self] (result, error) in
-            if let error = error {
-                self?.showPrompt(ofMessage: error.localizedDescription)
+            if error != nil {
+                self?.showPrompt(ofMessage: error!.localizedDescription)
                 return
             }
-            else if (result?.isCancelled)! {
+            if (result?.isCancelled)! {
                 print("FBLogin cancelled")
                 return
             }
