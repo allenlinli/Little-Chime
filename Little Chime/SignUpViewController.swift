@@ -7,29 +7,55 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FBSDKLoginKit
+
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func signupWithFacebook(_ sender: AnyObject) {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func signupWithGoogle(_ sender: AnyObject) {
     }
-    */
-
+    @IBAction func signupWithEmail(_ sender: AnyObject)
+    {
+        showPrompt(ofTextInputWithMessage: "Email") { [weak self] (userPressedOK, email) in
+            if (!userPressedOK || email!.characters.count == 0) {
+                return;
+            }
+            
+            self?.showPrompt(ofTextInputWithMessage: "Password", completion: { [weak self] (userPressedOK, password) in
+                if (!userPressedOK || password!.characters.count == 0) {
+                    return;
+                }
+                
+                self?.showSpinner(with: {
+                    FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { [weak self] (user, error) in
+                        self?.hideSpinner(with: { [weak self] in
+                            if error != nil {
+                                self?.showPrompt(ofMessage: error!.localizedDescription)
+                                return
+                            }
+                            
+                            self?.dismiss(animated: true, completion: nil)
+                            })
+                        })
+                })
+                })
+        }
+    }
 }

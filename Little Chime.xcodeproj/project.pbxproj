@@ -21,7 +21,7 @@
 		E9866D211D7583E8001D7291 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */; };
 		E990AE4F1D7557A300E1187D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990AE4E1D7557A300E1187D /* SignInViewController.swift */; };
 		E9A2614E1D81394B008A24AB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A2614D1D81394B008A24AB /* SignUpViewController.swift */; };
-		E9A261511D813D11008A24AB /* ShowSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A261501D813D11008A24AB /* ShowSignInViewController.swift */; };
+		E9DC911A1D87CE0300EB7391 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC91191D87CE0300EB7391 /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		E9866D221D7706AB001D7291 /* Little Chime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Little Chime-Bridging-Header.h"; sourceTree = "<group>"; };
 		E990AE4E1D7557A300E1187D /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E9A2614D1D81394B008A24AB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		E9A261501D813D11008A24AB /* ShowSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSignInViewController.swift; sourceTree = "<group>"; };
+		E9DC91191D87CE0300EB7391 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 			children = (
 				E990AE4E1D7557A300E1187D /* SignInViewController.swift */,
 				E9A2614D1D81394B008A24AB /* SignUpViewController.swift */,
-				E9A261501D813D11008A24AB /* ShowSignInViewController.swift */,
+				E9DC91191D87CE0300EB7391 /* AuthViewController.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -379,10 +379,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */,
-				E9A261511D813D11008A24AB /* ShowSignInViewController.swift in Sources */,
 				E9A2614E1D81394B008A24AB /* SignUpViewController.swift in Sources */,
 				E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */,
 				E90463FF1D71A33400102251 /* Constants.swift in Sources */,
+				E9DC911A1D87CE0300EB7391 /* AuthViewController.swift in Sources */,
 				E990AE4F1D7557A300E1187D /* SignInViewController.swift in Sources */,
 				E9866D211D7583E8001D7291 /* UIViewController+Alerts.swift in Sources */,
 				E90464051D75242B00102251 /* MainViewController.swift in Sources */,

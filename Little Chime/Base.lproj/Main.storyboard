@@ -114,11 +114,11 @@
             </objects>
             <point key="canvasLocation" x="-1026" y="36"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Auth Nav View Controller-->
         <scene sceneID="bdg-pI-QMP">
             <objects>
-                <navigationController id="dZK-2t-Eur" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAR-an-PWg">
+                <navigationController id="dZK-2t-Eur" customClass="AuthNavViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eAR-an-PWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -133,7 +133,7 @@
         <!--Little Chime-->
         <scene sceneID="qEf-Jl-Ma2">
             <objects>
-                <viewController id="plZ-5V-QkV" sceneMemberID="viewController">
+                <viewController id="plZ-5V-QkV" customClass="AuthViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ji7-bH-Qhl"/>
                         <viewControllerLayoutGuide type="bottom" id="9sj-Cg-5Sy"/>
@@ -228,6 +228,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign in"/>
+                                <connections>
+                                    <action selector="signInWithEmail:" destination="j4Z-H7-qog" eventType="touchUpInside" id="fd8-Hd-ZCa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjn-GA-ETz">
                                 <constraints>
@@ -236,11 +239,12 @@
                                 </constraints>
                                 <state key="normal" title="forgot password?"/>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-3I-feh">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-3I-feh">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dAq-I7-9dA">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRj-8c-GLq">
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="dF4-Qc-HYb"/>
                                                     <constraint firstAttribute="width" constant="40" id="djH-sM-06B"/>
@@ -251,6 +255,7 @@
                                                 <state key="normal" title="Facebook sign in"/>
                                                 <connections>
                                                     <action selector="signInWithFacebook:" destination="plZ-5V-QkV" eventType="touchUpInside" id="5EX-sX-Ohb"/>
+                                                    <action selector="signInWithFacebook:" destination="j4Z-H7-qog" eventType="touchUpInside" id="Qdv-Vi-wqy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -258,6 +263,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O9c-ML-GxE">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8e-5Y-Ih9">
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="1f1-VT-r5g"/>
                                                     <constraint firstAttribute="height" constant="40" id="rrC-6x-eTf"/>
@@ -268,6 +274,7 @@
                                                 <state key="normal" title="Google sign in"/>
                                                 <connections>
                                                     <action selector="signInWithGoogle:" destination="plZ-5V-QkV" eventType="touchUpInside" id="Ag5-lO-KHG"/>
+                                                    <action selector="signInWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="ajG-Fh-aRS"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -277,11 +284,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IGN-aX-2kG" firstAttribute="top" secondItem="ONa-SU-rcu" secondAttribute="bottom" constant="8" id="3KV-ba-BOX"/>
+                            <constraint firstItem="IGN-aX-2kG" firstAttribute="top" secondItem="ONa-SU-rcu" secondAttribute="bottom" constant="4" id="3KV-ba-BOX"/>
                             <constraint firstItem="IGN-aX-2kG" firstAttribute="leading" secondItem="ONa-SU-rcu" secondAttribute="leading" id="6MT-Se-jYv"/>
                             <constraint firstItem="ccL-UC-IF1" firstAttribute="trailing" secondItem="IGN-aX-2kG" secondAttribute="trailing" id="AVf-ro-K0F"/>
                             <constraint firstItem="HRA-5y-qfU" firstAttribute="top" secondItem="tjn-GA-ETz" secondAttribute="bottom" constant="20" id="Ksf-60-Y9n"/>
-                            <constraint firstItem="ONa-SU-rcu" firstAttribute="top" secondItem="uDm-Zs-6hX" secondAttribute="bottom" constant="132" id="Lrf-U1-NVu"/>
+                            <constraint firstItem="ONa-SU-rcu" firstAttribute="top" secondItem="uDm-Zs-6hX" secondAttribute="bottom" constant="88" id="Lrf-U1-NVu"/>
                             <constraint firstItem="xyn-3I-feh" firstAttribute="leading" secondItem="ccL-UC-IF1" secondAttribute="leading" id="MFK-fJ-pfr"/>
                             <constraint firstItem="ccL-UC-IF1" firstAttribute="leading" secondItem="IGN-aX-2kG" secondAttribute="leading" id="NSD-h5-9rj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tjn-GA-ETz" secondAttribute="trailing" constant="12" id="ROG-AV-avO"/>
@@ -293,6 +300,10 @@
                             <constraint firstItem="IGN-aX-2kG" firstAttribute="trailing" secondItem="ONa-SU-rcu" secondAttribute="trailing" id="w9S-pS-Gck"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ONa-SU-rcu" id="qdf-h2-9Wa"/>
+                        <outlet property="passwordTextField" destination="IGN-aX-2kG" id="zAo-p8-m0i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDk-wY-Wcm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,22 +343,26 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signupWithEmail:" destination="FMA-fq-jqM" eventType="touchUpInside" id="vAR-eJ-tnv"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jmi-aZ-sy5">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jmi-aZ-sy5">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="y3H-uQ-sPl">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mDO-Mv-zMM">
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="KQi-Vd-tmt"/>
-                                                    <constraint firstAttribute="width" constant="50" id="q72-iv-6CY"/>
+                                                    <constraint firstAttribute="height" constant="40" id="KQi-Vd-tmt"/>
+                                                    <constraint firstAttribute="width" constant="40" id="q72-iv-6CY"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS5-YJ-dgy">
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Facebook sign in"/>
+                                                <state key="normal" title="Facebook sign up"/>
                                                 <connections>
-                                                    <action selector="signInWithFacebook:" destination="plZ-5V-QkV" eventType="touchUpInside" id="zNd-wt-sSm"/>
+                                                    <action selector="signupWithFacebook:" destination="FMA-fq-jqM" eventType="touchUpInside" id="Q5e-3H-I1U"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -355,16 +370,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UlH-Uf-wg6">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHT-qc-JHK">
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="GtP-qP-ynU"/>
-                                                    <constraint firstAttribute="width" constant="50" id="iyS-gO-wx8"/>
+                                                    <constraint firstAttribute="height" constant="40" id="GtP-qP-ynU"/>
+                                                    <constraint firstAttribute="width" constant="40" id="iyS-gO-wx8"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo1-2A-RCC">
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Google sign in"/>
+                                                <state key="normal" title="Google sign up"/>
                                                 <connections>
-                                                    <action selector="signInWithGoogle:" destination="plZ-5V-QkV" eventType="touchUpInside" id="xOe-QH-F6P"/>
+                                                    <action selector="signupWithGoogle:" destination="FMA-fq-jqM" eventType="touchUpInside" id="LuH-sX-Jwn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -381,13 +397,17 @@
                             <constraint firstItem="pPa-6p-zGC" firstAttribute="leading" secondItem="pKW-kZ-TAg" secondAttribute="leading" id="WRc-2m-guu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZKY-65-8dm" secondAttribute="trailing" constant="44" id="bfC-9A-7AW"/>
                             <constraint firstItem="jmi-aZ-sy5" firstAttribute="top" secondItem="pPa-6p-zGC" secondAttribute="bottom" constant="44" id="cdL-Kh-usV"/>
-                            <constraint firstItem="ZKY-65-8dm" firstAttribute="top" secondItem="rfb-fh-wC0" secondAttribute="bottom" constant="132" id="dUw-Ee-Fdx"/>
+                            <constraint firstItem="ZKY-65-8dm" firstAttribute="top" secondItem="rfb-fh-wC0" secondAttribute="bottom" constant="88" id="dUw-Ee-Fdx"/>
                             <constraint firstItem="jmi-aZ-sy5" firstAttribute="trailing" secondItem="pPa-6p-zGC" secondAttribute="trailing" id="i90-Jj-6my"/>
                             <constraint firstItem="jmi-aZ-sy5" firstAttribute="leading" secondItem="pPa-6p-zGC" secondAttribute="leading" id="iMU-Ro-gRp"/>
                             <constraint firstItem="ZKY-65-8dm" firstAttribute="leading" secondItem="6Oq-U6-U0T" secondAttribute="leadingMargin" constant="44" id="vhR-lx-c2o"/>
-                            <constraint firstItem="pKW-kZ-TAg" firstAttribute="top" secondItem="ZKY-65-8dm" secondAttribute="bottom" constant="8" id="xcp-QP-8Hn"/>
+                            <constraint firstItem="pKW-kZ-TAg" firstAttribute="top" secondItem="ZKY-65-8dm" secondAttribute="bottom" constant="4" id="xcp-QP-8Hn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ZKY-65-8dm" id="uPu-3G-h9N"/>
+                        <outlet property="passwordTextField" destination="pKW-kZ-TAg" id="MhZ-6h-1Fw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ha4-vk-tsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

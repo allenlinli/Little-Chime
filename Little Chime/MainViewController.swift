@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
+        
         // MARK: Auth
         //If auth is not established, then pop up SignInVC
         authStateHandle = FIRAuth.auth()?.addStateDidChangeListener{ [weak self](auth, user) in

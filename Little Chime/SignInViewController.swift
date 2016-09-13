@@ -47,39 +47,14 @@ class SignInViewController: UIViewController {
         }
     }
     
-    @IBAction func signupWithEmail(_ sender: AnyObject)
-    {
-        showPrompt(ofTextInputWithMessage: "Email") { [weak self] (userPressedOK, email) in
-            if (!userPressedOK || email!.characters.count == 0) {
-                return;
-            }
-            
-            self?.showPrompt(ofTextInputWithMessage: "Password", completion: { [weak self] (userPressedOK, password) in
-                if (!userPressedOK || password!.characters.count == 0) {
-                    return;
-                }
-                
-                self?.showSpinner(with: {
-                    FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { [weak self] (user, error) in
-                        self?.hideSpinner(with: { [weak self] in
-                            if error != nil {
-                                self?.showPrompt(ofMessage: error!.localizedDescription)
-                                return
-                            }
-                            
-                            self?.dismiss(animated: true, completion: nil)
-                        })
-                    })
-                })
-            })
-        }
-    }
+    
     @IBAction func signInWithGoogle(_ sender: AnyObject) {
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().signIn()
     }
+    
     @IBAction func signInWithFacebook(_ sender: AnyObject) {
         FBSDKLoginManager().logIn(withReadPermissions: [ "public_profile", "email" ], from: self, handler: { [weak self] (result, error) in
             if error != nil {
