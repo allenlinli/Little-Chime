@@ -10,7 +10,6 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 import Firebase
-import FBSDKLoginKit
 
 class AuthViewController: UIViewController {
 
@@ -20,7 +19,7 @@ class AuthViewController: UIViewController {
         case signup
     }
     
-    let authType: AuthType! = nil
+    var authType: AuthType!
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
@@ -30,6 +29,19 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (authType == AuthType.signin) {
+            title = "Sign In"
+            signinButton.isHidden = false
+            signupButton.isHidden = true
+            retreivePasswordButton.isHidden = false
+        }
+        else {
+            title = "Sign Up"
+            signinButton.isHidden = true
+            signupButton.isHidden = false
+            retreivePasswordButton.isHidden = true
+        }
         
         GIDSignIn.sharedInstance().uiDelegate = self
         navigationController!.navigationBar.isHidden = false

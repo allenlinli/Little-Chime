@@ -20,15 +20,18 @@ class ShowAuthViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination
         guard let segueIdentifier = segue.identifier else {
             return
         }
+        guard let vc = segue.destination as? AuthViewController else {
+            return
+        }
+        
         if (segueIdentifier == SegueID.SigninVCID.rawValue) {
-            vc.title = "Sign In"
+            vc.authType = AuthViewController.AuthType.signin
         }
         else if (segueIdentifier == SegueID.SignupVCID.rawValue) {
-            vc.title = "Sign Up"
+            vc.authType = AuthViewController.AuthType.signup
         }
     }
 }

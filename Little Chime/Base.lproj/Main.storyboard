@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1026" y="36"/>
+            <point key="canvasLocation" x="-299" y="36"/>
         </scene>
         <!--Auth Nav View Controller-->
         <scene sceneID="bdg-pI-QMP">
@@ -128,7 +128,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Z7-UQ-DVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="36"/>
+            <point key="canvasLocation" x="261" y="36"/>
         </scene>
         <!--Little Chime-->
         <scene sceneID="qEf-Jl-Ma2">
