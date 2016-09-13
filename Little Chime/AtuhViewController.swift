@@ -23,7 +23,11 @@ class AuthViewController: UIViewController {
     let authType: AuthType! = nil
     
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var signinButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var retreivePasswordButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +35,7 @@ class AuthViewController: UIViewController {
         navigationController!.navigationBar.isHidden = false
     }
     
+    // MARK: signin
     @IBAction func signInWithEmail(_ sender: AnyObject) {
         guard let email = emailTextField.text else {
             showPrompt(ofMessage: "Please Fill in Email.")
@@ -56,7 +61,6 @@ class AuthViewController: UIViewController {
         }
     }
     
-    
     @IBAction func signInWithGoogle(_ sender: AnyObject) {
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -80,7 +84,7 @@ class AuthViewController: UIViewController {
         })
     }
     
-    //Signup
+    // Mark: Signup
     @IBAction func signupWithGoogle(_ sender: AnyObject) {
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -113,6 +117,10 @@ class AuthViewController: UIViewController {
                 })
                 })
         }
+    }
+    
+    // MARK: retreivePassword
+    @IBAction func retreivePasswordButtonPressed(_ sender: AnyObject) {
     }
 }
 
@@ -170,6 +178,7 @@ extension AuthViewController: GIDSignInDelegate
     func firebaseLogin(with credential: FIRAuthCredential) {
         showSpinner(with: { [weak self]() in
             if let user = FIRAuth.auth()?.currentUser {
+                // upload credential and link with user
                 user.link(with: credential) { (user, error) in
                     self?.hideSpinner(with: { [weak self]() in
                         if error != nil {
@@ -180,6 +189,7 @@ extension AuthViewController: GIDSignInDelegate
                 }
             }
             else {
+                // just sign in
                 FIRAuth.auth()?.signIn(with: credential) { (user, error) in
                     self?.hideSpinner(with: { [weak self]() in
                         if error != nil {
