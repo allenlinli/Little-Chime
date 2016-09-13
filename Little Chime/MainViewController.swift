@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         authStateHandle = FIRAuth.auth()?.addStateDidChangeListener{ [weak self](auth, user) in
             if user == nil
             {
-                self?.performSegue(withIdentifier: "ShowSignInVCID", sender: self)
+                self?.performSegue(withIdentifier: "ShowSignInNavVCID", sender: self)
                 return
             }
             

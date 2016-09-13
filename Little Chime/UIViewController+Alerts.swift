@@ -71,7 +71,7 @@ extension UIViewController
      @param message The message to display.
      @param completion A block to call when the user taps 'OK' or 'Cancel'.
      */
-    func showPrompt(ofTextInputWithMessage message: String, completion:AlertPromptCompletionBlock) {
+    func showPrompt(ofTextInputWithMessage message: String, completion:@escaping AlertPromptCompletionBlock) {
         let prompt = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: kCancel, style: .cancel, handler: { (action) in
             completion(false, nil)
