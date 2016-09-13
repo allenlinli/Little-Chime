@@ -12,14 +12,23 @@ import GoogleSignIn
 import Firebase
 import FBSDKLoginKit
 
-class SignInViewController: UIViewController {
+class AuthViewController: UIViewController {
 
+    enum AuthType
+    {
+        case signin
+        case signup
+    }
+    
+    let authType: AuthType! = nil
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        navigationController!.navigationBar.isHidden = false
     }
     
     @IBAction func signInWithEmail(_ sender: AnyObject) {
@@ -70,10 +79,45 @@ class SignInViewController: UIViewController {
             self?.firebaseLogin(with: credential)
         })
     }
+    
+    //Signup
+    @IBAction func signupWithGoogle(_ sender: AnyObject) {
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    @IBAction func signupWithEmail(_ sender: AnyObject)
+    {
+        showPrompt(ofTextInputWithMessage: "Email") { [weak self] (userPressedOK, email) in
+            if (!userPressedOK || email!.characters.count == 0) {
+                return;
+            }
+            
+            self?.showPrompt(ofTextInputWithMessage: "Password", completion: { [weak self] (userPressedOK, password) in
+                if (!userPressedOK || password!.characters.count == 0) {
+                    return;
+                }
+                
+                self?.showSpinner(with: {
+                    FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { [weak self] (user, error) in
+                        self?.hideSpinner(with: { [weak self] in
+                            if error != nil {
+                                self?.showPrompt(ofMessage: error!.localizedDescription)
+                                return
+                            }
+                            
+                            self?.dismiss(animated: true, completion: nil)
+                            })
+                        })
+                })
+                })
+        }
+    }
 }
 
 // [START headless_google_auth]
-extension SignInViewController: GIDSignInUIDelegate
+extension AuthViewController: GIDSignInUIDelegate
 {
     /*
      // A protocol which may be implemented by consumers of |GIDSignIn| to be notified of when
@@ -106,7 +150,7 @@ extension SignInViewController: GIDSignInUIDelegate
 // [END headless_google_auth]
 
 // [START headless_google_auth]
-extension SignInViewController: GIDSignInDelegate
+extension AuthViewController: GIDSignInDelegate
 {
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil {
