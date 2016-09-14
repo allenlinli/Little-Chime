@@ -118,7 +118,7 @@
         <scene sceneID="bdg-pI-QMP">
             <objects>
                 <navigationController id="dZK-2t-Eur" customClass="AuthNavViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eAR-an-PWg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAR-an-PWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -225,9 +225,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Facebook signin"/>
                                 <connections>
-                                    <action selector="signInWithFacebook:" destination="plZ-5V-QkV" eventType="touchUpInside" id="5EX-sX-Ohb"/>
-                                    <action selector="signInWithFacebook:" destination="j4Z-H7-qog" eventType="touchUpInside" id="Qdv-Vi-wqy"/>
-                                    <outlet property="delegate" destination="j4Z-H7-qog" id="DIT-jB-ABk"/>
+                                    <outlet property="delegate" destination="j4Z-H7-qog" id="y13-dm-GhS"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONa-SU-rcu">
@@ -281,11 +279,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Google signin"/>
-                                <connections>
-                                    <action selector="signInWithGoogle:" destination="plZ-5V-QkV" eventType="touchUpInside" id="Ag5-lO-KHG"/>
-                                    <action selector="signInWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="ajG-Fh-aRS"/>
-                                    <action selector="signupWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="282-R8-GSg"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

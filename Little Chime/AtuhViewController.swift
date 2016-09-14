@@ -107,9 +107,6 @@ class AuthViewController: UIViewController {
     
     // Mark: Signup
     @IBAction func signupWithGoogle(_ sender: AnyObject) {
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().signIn()
     }
     
