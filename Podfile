@@ -7,11 +7,12 @@ use_frameworks!
 pod 'Firebase'
 
 pod 'Firebase/Auth'
+pod 'FBSDKCoreKit', '~> 4.15.0'
+pod 'FBSDKLoginKit', '~> 4.15.0'
+pod 'FBSDKShareKit', '~> 4.15.0'
 
 # These are pods used for the auth providers.
-pod 'FBSDKLoginKit'
 pod 'GoogleSignIn'
-
 target 'Little Chime' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   

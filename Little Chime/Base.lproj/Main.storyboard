@@ -194,7 +194,7 @@
             </objects>
             <point key="canvasLocation" x="838" y="37"/>
         </scene>
-        <!--Sign in-->
+        <!--Delegate-->
         <scene sceneID="lLA-Vx-Eeg">
             <objects>
                 <viewController title="Sign in" id="j4Z-H7-qog" customClass="AuthViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,13 +239,14 @@
                                                     <constraint firstAttribute="width" constant="40" id="djH-sM-06B"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmH-ZR-MuV">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmH-ZR-MuV" customClass="FBSDKLoginButton">
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Facebook signin"/>
                                                 <connections>
                                                     <action selector="signInWithFacebook:" destination="plZ-5V-QkV" eventType="touchUpInside" id="5EX-sX-Ohb"/>
                                                     <action selector="signInWithFacebook:" destination="j4Z-H7-qog" eventType="touchUpInside" id="Qdv-Vi-wqy"/>
+                                                    <outlet property="delegate" destination="j4Z-H7-qog" id="DIT-jB-ABk"/>
                                                 </connections>
                                             </button>
                                         </subviews>

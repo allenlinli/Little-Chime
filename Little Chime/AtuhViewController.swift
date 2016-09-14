@@ -167,6 +167,21 @@ class AuthViewController: UIViewController {
             }
         }
     }
+    
+    @objc(signIn:didSignInForUser:withError:) func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            showPrompt(ofMessage: error.localizedDescription)
+            return
+        }
+        
+        guard let authentication = user.authentication else {
+            print("Error: ! let authentication = user.authentication")
+            return
+        }
+        
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        firebaseLogin(with: credential)
+    }
 }
 
 extension AuthViewController: GIDSignInUIDelegate
@@ -217,19 +232,41 @@ extension AuthViewController: UITextFieldDelegate
 
 extension AuthViewController: GIDSignInDelegate
 {
-    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         if error != nil {
             showPrompt(ofMessage: error.localizedDescription)
             return
         }
-        
-        guard let authentication = user.authentication else {
-            print("Error: ! let authentication = user.authentication")
-            return
-        }
-        
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        firebaseLogin(with: credential)
+    }
+    
+//    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if error != nil {
+//            showPrompt(ofMessage: error.localizedDescription)
+//            return
+//        }
+//        
+//        guard let authentication = user.authentication else {
+//            print("Error: ! let authentication = user.authentication")
+//            return
+//        }
+//        
+//        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+//        firebaseLogin(with: credential)
+//    }
+}
+
+extension AuthViewController
+{
+    @objc(signIn:dismissViewController:) func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        print("sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!)")
+    }
+    
+    @objc(signIn:presentViewController:) func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        print("sign(_ signIn: GIDSignIn!, present viewController:")
+    }
+    
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+
     }
     
     func firebaseLogin(with credential: FIRAuthCredential) {
@@ -246,7 +283,7 @@ extension AuthViewController: GIDSignInDelegate
                         self?.dismiss(animated: true, completion: {
                             
                         })
-                    })
+                        })
                 }
             }
             else {
@@ -261,9 +298,38 @@ extension AuthViewController: GIDSignInDelegate
                         self?.dismiss(animated: true, completion: {
                             
                         })
-                    })
+                        })
                 }
             }
         })
     }
+    
+    
 }
+
+extension AuthViewController: FBSDKLoginButtonDelegate
+{
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error?) {
+        if let error = error {
+            showPrompt(ofMessage: error.localizedDescription)
+            return
+        }
+        // ...
+        
+        let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        FIRAuth.auth()?.signIn(with: credential) { [weak self] (user, error) in
+            if let error = error {
+                self?.showPrompt(ofMessage: error.localizedDescription)
+                return
+            }
+            
+            self?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        try! FIRAuth.auth()!.signOut()
+    }
+}
+
+
