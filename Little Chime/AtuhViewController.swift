@@ -10,10 +10,11 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 import Firebase
+import FBSDKLoginKit
 
 class AuthViewController: UIViewController {
 
-    enum AuthType
+    enum AuthType: String
     {
         case signin
         case signup
@@ -103,40 +104,61 @@ class AuthViewController: UIViewController {
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().signIn()
     }
+    
     @IBAction func signupWithEmail(_ sender: AnyObject)
     {
-        showPrompt(ofTextInputWithMessage: "Email") { [weak self] (userPressedOK, email) in
-            if (!userPressedOK || email!.characters.count == 0) {
-                return;
-            }
-            
-            self?.showPrompt(ofTextInputWithMessage: "Password", completion: { [weak self] (userPressedOK, password) in
-                if (!userPressedOK || password!.characters.count == 0) {
-                    return;
-                }
-                
-                self?.showSpinner(with: {
-                    FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { [weak self] (user, error) in
+        guard let email = emailTextField.text else {
+            showPrompt(ofMessage: "Please Fill in Email.")
+            return
+        }
+        guard let password = passwordTextField.text else {
+            showPrompt(ofMessage: "Please Fill in password.")
+            return
+        }
+        
+        // TODO: examine email and password
+        showSpinner(with: {
+            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { [weak self] (user, error) in
+                self?.hideSpinner(with: { [weak self] in
+                    if error != nil {
+                        self?.showPrompt(ofMessage: error!.localizedDescription)
+                        return
+                    }
+                    
+                    self?.showPrompt(ofMessage: "Account Created!")
+        
+                    _ = self?.navigationController?.popViewController(animated: true)
+                })
+            })
+        })
+    }
+    
+    // MARK: retreivePassword
+    @IBAction func retreivePasswordButtonPressed(_ sender: AnyObject) {
+        showPrompt(ofTextInputWithMessage: "Email:") { [weak self] (userPressedOK, userInput)  in
+            if let userInput = userInput {
+                self?.showSpinner(with: { [weak self] in
+                    FIRAuth.auth()?.sendPasswordReset(withEmail: userInput) { [weak self] (error) in
+                        if error != nil {
+                            self?.showPrompt(ofMessage: error!.localizedDescription)
+                            return
+                        }
+                        
                         self?.hideSpinner(with: { [weak self] in
                             if error != nil {
                                 self?.showPrompt(ofMessage: error!.localizedDescription)
                                 return
                             }
                             
-                            self?.dismiss(animated: true, completion: nil)
-                            })
+                            self?.showPrompt(ofMessage: "Reset password email sent")
                         })
+                    }
                 })
-                })
+            }
         }
-    }
-    
-    // MARK: retreivePassword
-    @IBAction func retreivePasswordButtonPressed(_ sender: AnyObject) {
     }
 }
 
-// [START headless_google_auth]
 extension AuthViewController: GIDSignInUIDelegate
 {
     /*
@@ -167,9 +189,23 @@ extension AuthViewController: GIDSignInUIDelegate
      - (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController;
      */
 }
-// [END headless_google_auth]
 
-// [START headless_google_auth]
+extension AuthViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+            return true
+        }
+        else if textField == passwordTextField {
+            textField.resignFirstResponder()
+            signupWithEmail(self)
+            return true
+        }
+        return true
+    }
+}
+
 extension AuthViewController: GIDSignInDelegate
 {
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -214,6 +250,3 @@ extension AuthViewController: GIDSignInDelegate
         })
     }
 }
-// [END headless_google_auth]
-
-

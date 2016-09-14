@@ -112,13 +112,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="36"/>
+            <point key="canvasLocation" x="-730" y="36"/>
         </scene>
         <!--Auth Nav View Controller-->
         <scene sceneID="bdg-pI-QMP">
             <objects>
                 <navigationController id="dZK-2t-Eur" customClass="AuthNavViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eAR-an-PWg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAR-an-PWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -128,7 +128,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Z7-UQ-DVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="36"/>
+            <point key="canvasLocation" x="46" y="36"/>
         </scene>
         <!--Little Chime-->
         <scene sceneID="qEf-Jl-Ma2">
@@ -211,16 +211,22 @@
                                     <constraint firstAttribute="height" constant="44" id="ZPg-6Q-94N"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="send" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="j4Z-H7-qog" id="NJ7-dd-h1M"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONa-SU-rcu">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="wcx-Rf-fCQ"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="j4Z-H7-qog" id="m7a-kt-fbR"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-3I-feh">
                                 <subviews>
@@ -244,6 +250,9 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="DmH-ZR-MuV" firstAttribute="height" secondItem="TRj-8c-GLq" secondAttribute="height" id="nVC-qJ-NJV"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="O9c-ML-GxE">
                                         <subviews>
@@ -265,10 +274,13 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="JZS-4I-IrX" firstAttribute="height" secondItem="g8e-5Y-Ih9" secondAttribute="height" id="kBw-qs-Ve4"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccL-UC-IF1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccL-UC-IF1" userLabel="Signin with Email">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="X1r-gu-gup"/>
@@ -279,15 +291,14 @@
                                     <action selector="signInWithEmail:" destination="j4Z-H7-qog" eventType="touchUpInside" id="fd8-Hd-ZCa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7N-3v-bU3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7N-3v-bU3" userLabel="Signup with Email">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="p5a-Ms-zWO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Sign up with Email"/>
                                 <connections>
-                                    <action selector="signInWithEmail:" destination="j4Z-H7-qog" eventType="touchUpInside" id="OUu-p8-87v"/>
                                     <action selector="signupWithEmail:" destination="j4Z-H7-qog" eventType="touchUpInside" id="O6q-5D-0w0"/>
                                 </connections>
                             </button>
@@ -297,7 +308,7 @@
                                     <constraint firstAttribute="height" constant="44" id="VHA-tE-WKB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Retrive Password with Email"/>
+                                <state key="normal" title="Forgot password?"/>
                                 <connections>
                                     <action selector="retreivePasswordButtonPressed:" destination="j4Z-H7-qog" eventType="touchUpInside" id="zDT-dX-qwZ"/>
                                 </connections>
@@ -331,7 +342,7 @@
                         <outlet property="passwordTextField" destination="IGN-aX-2kG" id="zAo-p8-m0i"/>
                         <outlet property="retreivePasswordButton" destination="NjZ-9c-tsl" id="z4A-d9-9Ee"/>
                         <outlet property="signinButton" destination="ccL-UC-IF1" id="m9t-FE-a0o"/>
-                        <outlet property="signupButton" destination="b7N-3v-bU3" id="V2E-zH-hUM"/>
+                        <outlet property="signupButton" destination="b7N-3v-bU3" id="IXs-nr-Rfs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDk-wY-Wcm" userLabel="First Responder" sceneMemberID="firstResponder"/>
