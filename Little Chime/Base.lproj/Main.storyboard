@@ -118,7 +118,7 @@
         <scene sceneID="bdg-pI-QMP">
             <objects>
                 <navigationController id="dZK-2t-Eur" customClass="AuthNavViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAR-an-PWg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eAR-an-PWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -18,6 +18,8 @@
 		E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FC1D718D1500102251 /* ChimeManager.swift */; };
 		E90463FF1D71A33400102251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463FE1D71A33400102251 /* Constants.swift */; };
 		E90464051D75242B00102251 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90464041D75242B00102251 /* MainViewController.swift */; };
+		E94A1CB41D89913B005BCC41 /* AuthViewController+FBSignin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A1CB31D89913B005BCC41 /* AuthViewController+FBSignin.swift */; };
+		E94A1CB61D899179005BCC41 /* AuthViewController+GoogleSignin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A1CB51D899179005BCC41 /* AuthViewController+GoogleSignin.swift */; };
 		E9866D211D7583E8001D7291 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */; };
 		E990AE4F1D7557A300E1187D /* AtuhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990AE4E1D7557A300E1187D /* AtuhViewController.swift */; };
 		E9DC911A1D87CE0300EB7391 /* ShowAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC91191D87CE0300EB7391 /* ShowAuthViewController.swift */; };
@@ -54,6 +56,8 @@
 		E90463FE1D71A33400102251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E90464041D75242B00102251 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E94A1CB21D891790005BCC41 /* Little Chime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Little Chime.entitlements"; sourceTree = "<group>"; };
+		E94A1CB31D89913B005BCC41 /* AuthViewController+FBSignin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AuthViewController+FBSignin.swift"; sourceTree = "<group>"; };
+		E94A1CB51D899179005BCC41 /* AuthViewController+GoogleSignin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AuthViewController+GoogleSignin.swift"; sourceTree = "<group>"; };
 		E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		E9866D221D7706AB001D7291 /* Little Chime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Little Chime-Bridging-Header.h"; sourceTree = "<group>"; };
 		E990AE4E1D7557A300E1187D /* AtuhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtuhViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				E990AE4E1D7557A300E1187D /* AtuhViewController.swift */,
+				E94A1CB51D899179005BCC41 /* AuthViewController+GoogleSignin.swift */,
+				E94A1CB31D89913B005BCC41 /* AuthViewController+FBSignin.swift */,
 				E9DC91191D87CE0300EB7391 /* ShowAuthViewController.swift */,
 			);
 			name = Auth;
@@ -377,6 +383,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94A1CB61D899179005BCC41 /* AuthViewController+GoogleSignin.swift in Sources */,
+				E94A1CB41D89913B005BCC41 /* AuthViewController+FBSignin.swift in Sources */,
 				E90463FD1D718D1600102251 /* ChimeManager.swift in Sources */,
 				E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */,
 				E90463FF1D71A33400102251 /* Constants.swift in Sources */,

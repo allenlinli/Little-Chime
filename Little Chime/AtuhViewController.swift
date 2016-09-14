@@ -44,6 +44,7 @@ class AuthViewController: UIViewController {
             retreivePasswordButton.isHidden = true
         }
         
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         navigationController!.navigationBar.isHidden = false
@@ -85,9 +86,6 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func signInWithGoogle(_ sender: AnyObject) {
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().signIn()
     }
     
@@ -167,52 +165,6 @@ class AuthViewController: UIViewController {
             }
         }
     }
-    
-    @objc(signIn:didSignInForUser:withError:) func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if error != nil {
-            showPrompt(ofMessage: error.localizedDescription)
-            return
-        }
-        
-        guard let authentication = user.authentication else {
-            print("Error: ! let authentication = user.authentication")
-            return
-        }
-        
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        firebaseLogin(with: credential)
-    }
-}
-
-extension AuthViewController: GIDSignInUIDelegate
-{
-    /*
-     // A protocol which may be implemented by consumers of |GIDSignIn| to be notified of when
-     // GIDSignIn has finished dispatching the sign-in request.
-     //
-     // This protocol is useful for developers who implement their own "Sign In with Google" button.
-     // Because there may be a brief delay between when the call to |signIn| is made, and when the
-     // app switch occurs, it is best practice to have the UI react to the user's input by displaying
-     // a spinner or other UI element. The |signInWillDispatch| method should be used to
-     // stop or hide the spinner.
-     @protocol GIDSignInUIDelegate <NSObject>
-     
-     @optional
-     
-     // The sign-in flow has finished selecting how to proceed, and the UI should no longer display
-     // a spinner or other "please wait" element.
-     - (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error;
-     
-     // If implemented, this method will be invoked when sign in needs to display a view controller.
-     // The view controller should be displayed modally (via UIViewController's |presentViewController|
-     // method, and not pushed unto a navigation controller's stack.
-     - (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController;
-     
-     // If implemented, this method will be invoked when sign in needs to dismiss a view controller.
-     // Typically, this should be implemented by calling |dismissViewController| on the passed
-     // view controller.
-     - (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController;
-     */
 }
 
 extension AuthViewController: UITextFieldDelegate
@@ -230,45 +182,8 @@ extension AuthViewController: UITextFieldDelegate
     }
 }
 
-extension AuthViewController: GIDSignInDelegate
-{
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        if error != nil {
-            showPrompt(ofMessage: error.localizedDescription)
-            return
-        }
-    }
-    
-//    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        if error != nil {
-//            showPrompt(ofMessage: error.localizedDescription)
-//            return
-//        }
-//        
-//        guard let authentication = user.authentication else {
-//            print("Error: ! let authentication = user.authentication")
-//            return
-//        }
-//        
-//        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-//        firebaseLogin(with: credential)
-//    }
-}
-
 extension AuthViewController
 {
-    @objc(signIn:dismissViewController:) func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
-        print("sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!)")
-    }
-    
-    @objc(signIn:presentViewController:) func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
-        print("sign(_ signIn: GIDSignIn!, present viewController:")
-    }
-    
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-
-    }
-    
     func firebaseLogin(with credential: FIRAuthCredential) {
         showSpinner(with: { [weak self]() in
             if let user = FIRAuth.auth()?.currentUser {
@@ -283,7 +198,7 @@ extension AuthViewController
                         self?.dismiss(animated: true, completion: {
                             
                         })
-                        })
+                    })
                 }
             }
             else {
@@ -298,41 +213,13 @@ extension AuthViewController
                         self?.dismiss(animated: true, completion: {
                             
                         })
-                        })
+                    })
                 }
             }
         })
     }
-    
-    
 }
 
-extension AuthViewController: FBSDKLoginButtonDelegate
-{
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error?) {
-        if let error = error {
-            showPrompt(ofMessage: error.localizedDescription)
-            return
-        }
-        else if result.isCancelled {
-            return
-        }
-        
-        //let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        let credential = FIRFacebookAuthProvider.credential(withAccessToken: result.token.tokenString)
-        FIRAuth.auth()?.signIn(with: credential) { [weak self] (user, error) in
-            if let error = error {
-                self?.showPrompt(ofMessage: error.localizedDescription)
-                return
-            }
-            
-            self?.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        try! FIRAuth.auth()!.signOut()
-    }
-}
+
 
 
