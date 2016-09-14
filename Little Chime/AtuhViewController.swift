@@ -105,6 +105,41 @@ class AuthViewController: UIViewController {
         })
     }
     
+    func firebaseLogin(with credential: FIRAuthCredential) {
+        showSpinner(with: { [weak self]() in
+            if let user = FIRAuth.auth()?.currentUser {
+                // upload credential and link with user
+                user.link(with: credential) { (user, error) in
+                    self?.hideSpinner(with: { [weak self]() in
+                        if error != nil {
+                            self?.showPrompt(ofMessage: error!.localizedDescription)
+                            return
+                        }
+                        
+                        self?.dismiss(animated: true, completion: {
+                            
+                        })
+                        })
+                }
+            }
+            else {
+                // just sign in
+                FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+                    self?.hideSpinner(with: { [weak self]() in
+                        if error != nil {
+                            self?.showPrompt(ofMessage: error!.localizedDescription)
+                            return
+                        }
+                        
+                        self?.dismiss(animated: true, completion: {
+                            
+                        })
+                        })
+                }
+            }
+            })
+    }
+    
     // Mark: Signup
     @IBAction func signupWithGoogle(_ sender: AnyObject) {
         GIDSignIn.sharedInstance().signIn()
@@ -178,45 +213,3 @@ extension AuthViewController: UITextFieldDelegate
         return true
     }
 }
-
-extension AuthViewController
-{
-    func firebaseLogin(with credential: FIRAuthCredential) {
-        showSpinner(with: { [weak self]() in
-            if let user = FIRAuth.auth()?.currentUser {
-                // upload credential and link with user
-                user.link(with: credential) { (user, error) in
-                    self?.hideSpinner(with: { [weak self]() in
-                        if error != nil {
-                            self?.showPrompt(ofMessage: error!.localizedDescription)
-                            return
-                        }
-                        
-                        self?.dismiss(animated: true, completion: {
-                            
-                        })
-                    })
-                }
-            }
-            else {
-                // just sign in
-                FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-                    self?.hideSpinner(with: { [weak self]() in
-                        if error != nil {
-                            self?.showPrompt(ofMessage: error!.localizedDescription)
-                            return
-                        }
-                        
-                        self?.dismiss(animated: true, completion: {
-                            
-                        })
-                    })
-                }
-            }
-        })
-    }
-}
-
-
-
-

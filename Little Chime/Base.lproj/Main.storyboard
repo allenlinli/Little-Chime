@@ -118,7 +118,7 @@
         <scene sceneID="bdg-pI-QMP">
             <objects>
                 <navigationController id="dZK-2t-Eur" customClass="AuthNavViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAR-an-PWg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eAR-an-PWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -279,6 +279,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Google signin"/>
+                                <connections>
+                                    <action selector="signInWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="Wcx-kA-XUY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
