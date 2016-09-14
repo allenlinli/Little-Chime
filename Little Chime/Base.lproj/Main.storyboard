@@ -118,7 +118,7 @@
         <scene sceneID="bdg-pI-QMP">
             <objects>
                 <navigationController id="dZK-2t-Eur" customClass="AuthNavViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eAR-an-PWg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAR-an-PWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -217,6 +217,19 @@
                                     <outlet property="delegate" destination="j4Z-H7-qog" id="NJ7-dd-h1M"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmH-ZR-MuV" customClass="FBSDKLoginButton">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ex0-Vm-2kR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Facebook signin"/>
+                                <connections>
+                                    <action selector="signInWithFacebook:" destination="plZ-5V-QkV" eventType="touchUpInside" id="5EX-sX-Ohb"/>
+                                    <action selector="signInWithFacebook:" destination="j4Z-H7-qog" eventType="touchUpInside" id="Qdv-Vi-wqy"/>
+                                    <outlet property="delegate" destination="j4Z-H7-qog" id="DIT-jB-ABk"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONa-SU-rcu">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="wcx-Rf-fCQ"/>
@@ -228,59 +241,6 @@
                                     <outlet property="delegate" destination="j4Z-H7-qog" id="m7a-kt-fbR"/>
                                 </connections>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-3I-feh">
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dAq-I7-9dA">
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRj-8c-GLq">
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="dF4-Qc-HYb"/>
-                                                    <constraint firstAttribute="width" constant="40" id="djH-sM-06B"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmH-ZR-MuV" customClass="FBSDKLoginButton">
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Facebook signin"/>
-                                                <connections>
-                                                    <action selector="signInWithFacebook:" destination="plZ-5V-QkV" eventType="touchUpInside" id="5EX-sX-Ohb"/>
-                                                    <action selector="signInWithFacebook:" destination="j4Z-H7-qog" eventType="touchUpInside" id="Qdv-Vi-wqy"/>
-                                                    <outlet property="delegate" destination="j4Z-H7-qog" id="DIT-jB-ABk"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="DmH-ZR-MuV" firstAttribute="height" secondItem="TRj-8c-GLq" secondAttribute="height" id="nVC-qJ-NJV"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="O9c-ML-GxE">
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8e-5Y-Ih9">
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="1f1-VT-r5g"/>
-                                                    <constraint firstAttribute="height" constant="40" id="rrC-6x-eTf"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-4I-IrX">
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Google signin"/>
-                                                <connections>
-                                                    <action selector="signInWithGoogle:" destination="plZ-5V-QkV" eventType="touchUpInside" id="Ag5-lO-KHG"/>
-                                                    <action selector="signInWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="ajG-Fh-aRS"/>
-                                                    <action selector="signupWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="282-R8-GSg"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="JZS-4I-IrX" firstAttribute="height" secondItem="g8e-5Y-Ih9" secondAttribute="height" id="kBw-qs-Ve4"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccL-UC-IF1" userLabel="Signin with Email">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -314,6 +274,19 @@
                                     <action selector="retreivePasswordButtonPressed:" destination="j4Z-H7-qog" eventType="touchUpInside" id="zDT-dX-qwZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-4I-IrX">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="49x-oR-Qvo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Google signin"/>
+                                <connections>
+                                    <action selector="signInWithGoogle:" destination="plZ-5V-QkV" eventType="touchUpInside" id="Ag5-lO-KHG"/>
+                                    <action selector="signInWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="ajG-Fh-aRS"/>
+                                    <action selector="signupWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="282-R8-GSg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -322,20 +295,23 @@
                             <constraint firstItem="IGN-aX-2kG" firstAttribute="leading" secondItem="ONa-SU-rcu" secondAttribute="leading" id="6MT-Se-jYv"/>
                             <constraint firstItem="ccL-UC-IF1" firstAttribute="trailing" secondItem="IGN-aX-2kG" secondAttribute="trailing" id="AVf-ro-K0F"/>
                             <constraint firstItem="b7N-3v-bU3" firstAttribute="top" secondItem="ccL-UC-IF1" secondAttribute="top" id="Ang-Af-OtY"/>
+                            <constraint firstItem="JZS-4I-IrX" firstAttribute="trailing" secondItem="b7N-3v-bU3" secondAttribute="trailing" id="FYE-4P-a2N"/>
                             <constraint firstItem="b7N-3v-bU3" firstAttribute="bottom" secondItem="ccL-UC-IF1" secondAttribute="bottom" id="GRr-ZL-pTV"/>
                             <constraint firstItem="ONa-SU-rcu" firstAttribute="top" secondItem="uDm-Zs-6hX" secondAttribute="bottom" constant="88" id="Lrf-U1-NVu"/>
-                            <constraint firstItem="xyn-3I-feh" firstAttribute="leading" secondItem="ccL-UC-IF1" secondAttribute="leading" id="MFK-fJ-pfr"/>
                             <constraint firstItem="ccL-UC-IF1" firstAttribute="leading" secondItem="IGN-aX-2kG" secondAttribute="leading" id="NSD-h5-9rj"/>
-                            <constraint firstItem="xyn-3I-feh" firstAttribute="top" secondItem="ccL-UC-IF1" secondAttribute="bottom" constant="8" id="WOH-Xm-wN5"/>
+                            <constraint firstItem="DmH-ZR-MuV" firstAttribute="leading" secondItem="b7N-3v-bU3" secondAttribute="leading" id="QhZ-ia-TY7"/>
+                            <constraint firstItem="DmH-ZR-MuV" firstAttribute="trailing" secondItem="b7N-3v-bU3" secondAttribute="trailing" id="XIg-kF-hak"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ONa-SU-rcu" secondAttribute="trailing" constant="44" id="YzI-M2-ilI"/>
-                            <constraint firstItem="xyn-3I-feh" firstAttribute="trailing" secondItem="ccL-UC-IF1" secondAttribute="trailing" id="aPt-Rr-OT7"/>
                             <constraint firstItem="ccL-UC-IF1" firstAttribute="top" secondItem="IGN-aX-2kG" secondAttribute="bottom" constant="16" id="d9x-NL-FSc"/>
                             <constraint firstItem="b7N-3v-bU3" firstAttribute="trailing" secondItem="ccL-UC-IF1" secondAttribute="trailing" id="ezU-Hp-Hhu"/>
+                            <constraint firstItem="DmH-ZR-MuV" firstAttribute="top" secondItem="b7N-3v-bU3" secondAttribute="bottom" constant="4" id="hH0-hv-Xco"/>
                             <constraint firstItem="HRA-5y-qfU" firstAttribute="top" secondItem="NjZ-9c-tsl" secondAttribute="bottom" constant="44" id="htG-1f-wH7"/>
                             <constraint firstItem="ONa-SU-rcu" firstAttribute="leading" secondItem="xVL-22-in3" secondAttribute="leadingMargin" constant="44" id="ivV-7M-77F"/>
                             <constraint firstItem="NjZ-9c-tsl" firstAttribute="trailing" secondItem="ccL-UC-IF1" secondAttribute="trailing" id="pJv-YX-jYM"/>
                             <constraint firstItem="NjZ-9c-tsl" firstAttribute="leading" secondItem="ccL-UC-IF1" secondAttribute="leading" id="uoy-R7-wFA"/>
+                            <constraint firstItem="JZS-4I-IrX" firstAttribute="leading" secondItem="b7N-3v-bU3" secondAttribute="leading" id="vd4-7Y-wQd"/>
                             <constraint firstItem="IGN-aX-2kG" firstAttribute="trailing" secondItem="ONa-SU-rcu" secondAttribute="trailing" id="w9S-pS-Gck"/>
+                            <constraint firstItem="JZS-4I-IrX" firstAttribute="top" secondItem="DmH-ZR-MuV" secondAttribute="bottom" constant="4" id="yBO-pC-5k6"/>
                         </constraints>
                     </view>
                     <connections>
