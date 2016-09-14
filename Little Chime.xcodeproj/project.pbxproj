@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9EBFF9D78DFEF978FAFFFD20 /* Pods_Little_Chime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD8424C4D71B80F5913F004 /* Pods_Little_Chime.framework */; };
 		D54055904C5305CC0317F5C4 /* Pods_Little_ChimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FF4D684BADB1308EB27BC9 /* Pods_Little_ChimeTests.framework */; };
+		E90262571D89A10000724BB4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90262561D89A10000724BB4 /* StoreKit.framework */; };
+		E90262591D89A10A00724BB4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90262581D89A10A00724BB4 /* SystemConfiguration.framework */; };
+		E902625B1D89A11100724BB4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E902625A1D89A11100724BB4 /* AddressBook.framework */; };
 		E90463D81D7165BA00102251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90463D71D7165BA00102251 /* AppDelegate.swift */; };
 		E90463DD1D7165BA00102251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90463DB1D7165BA00102251 /* Main.storyboard */; };
 		E90463DF1D7165BA00102251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90463DE1D7165BA00102251 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		9AD2942ABEEFFAAA7D2DE522 /* Pods-Little Chime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Chime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Little Chime/Pods-Little Chime.debug.xcconfig"; sourceTree = "<group>"; };
 		AAD8424C4D71B80F5913F004 /* Pods_Little_Chime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Little_Chime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FF4D684BADB1308EB27BC9 /* Pods_Little_ChimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Little_ChimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90262561D89A10000724BB4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E90262581D89A10A00724BB4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E902625A1D89A11100724BB4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E90463D41D7165BA00102251 /* Little Chime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Chime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90463D71D7165BA00102251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E90463DC1D7165BA00102251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E902625B1D89A11100724BB4 /* AddressBook.framework in Frameworks */,
+				E90262591D89A10A00724BB4 /* SystemConfiguration.framework in Frameworks */,
+				E90262571D89A10000724BB4 /* StoreKit.framework in Frameworks */,
 				9EBFF9D78DFEF978FAFFFD20 /* Pods_Little_Chime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +107,9 @@
 		AD81B7ABFEBD49C418FC6C03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E902625A1D89A11100724BB4 /* AddressBook.framework */,
+				E90262581D89A10A00724BB4 /* SystemConfiguration.framework */,
+				E90262561D89A10000724BB4 /* StoreKit.framework */,
 				AAD8424C4D71B80F5913F004 /* Pods_Little_Chime.framework */,
 				C2FF4D684BADB1308EB27BC9 /* Pods_Little_ChimeTests.framework */,
 			);

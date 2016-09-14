@@ -272,17 +272,12 @@
                                     <action selector="retreivePasswordButtonPressed:" destination="j4Z-H7-qog" eventType="touchUpInside" id="zDT-dX-qwZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-4I-IrX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYw-Cv-T2F" customClass="GIDSignInButton">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="49x-oR-Qvo"/>
+                                    <constraint firstAttribute="height" constant="44" id="gVy-Mw-v77"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Google signin"/>
-                                <connections>
-                                    <action selector="signInWithGoogle:" destination="j4Z-H7-qog" eventType="touchUpInside" id="Wcx-kA-XUY"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -291,11 +286,13 @@
                             <constraint firstItem="IGN-aX-2kG" firstAttribute="leading" secondItem="ONa-SU-rcu" secondAttribute="leading" id="6MT-Se-jYv"/>
                             <constraint firstItem="ccL-UC-IF1" firstAttribute="trailing" secondItem="IGN-aX-2kG" secondAttribute="trailing" id="AVf-ro-K0F"/>
                             <constraint firstItem="b7N-3v-bU3" firstAttribute="top" secondItem="ccL-UC-IF1" secondAttribute="top" id="Ang-Af-OtY"/>
-                            <constraint firstItem="JZS-4I-IrX" firstAttribute="trailing" secondItem="b7N-3v-bU3" secondAttribute="trailing" id="FYE-4P-a2N"/>
+                            <constraint firstItem="eYw-Cv-T2F" firstAttribute="top" secondItem="DmH-ZR-MuV" secondAttribute="bottom" constant="4" id="GD5-2m-8Pf"/>
                             <constraint firstItem="b7N-3v-bU3" firstAttribute="bottom" secondItem="ccL-UC-IF1" secondAttribute="bottom" id="GRr-ZL-pTV"/>
+                            <constraint firstItem="eYw-Cv-T2F" firstAttribute="leading" secondItem="b7N-3v-bU3" secondAttribute="leading" id="HjX-cu-0wD"/>
                             <constraint firstItem="ONa-SU-rcu" firstAttribute="top" secondItem="uDm-Zs-6hX" secondAttribute="bottom" constant="88" id="Lrf-U1-NVu"/>
                             <constraint firstItem="ccL-UC-IF1" firstAttribute="leading" secondItem="IGN-aX-2kG" secondAttribute="leading" id="NSD-h5-9rj"/>
                             <constraint firstItem="DmH-ZR-MuV" firstAttribute="leading" secondItem="b7N-3v-bU3" secondAttribute="leading" id="QhZ-ia-TY7"/>
+                            <constraint firstItem="eYw-Cv-T2F" firstAttribute="trailing" secondItem="b7N-3v-bU3" secondAttribute="trailing" id="U4C-nM-s0G"/>
                             <constraint firstItem="DmH-ZR-MuV" firstAttribute="trailing" secondItem="b7N-3v-bU3" secondAttribute="trailing" id="XIg-kF-hak"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ONa-SU-rcu" secondAttribute="trailing" constant="44" id="YzI-M2-ilI"/>
                             <constraint firstItem="ccL-UC-IF1" firstAttribute="top" secondItem="IGN-aX-2kG" secondAttribute="bottom" constant="16" id="d9x-NL-FSc"/>
@@ -305,13 +302,13 @@
                             <constraint firstItem="ONa-SU-rcu" firstAttribute="leading" secondItem="xVL-22-in3" secondAttribute="leadingMargin" constant="44" id="ivV-7M-77F"/>
                             <constraint firstItem="NjZ-9c-tsl" firstAttribute="trailing" secondItem="ccL-UC-IF1" secondAttribute="trailing" id="pJv-YX-jYM"/>
                             <constraint firstItem="NjZ-9c-tsl" firstAttribute="leading" secondItem="ccL-UC-IF1" secondAttribute="leading" id="uoy-R7-wFA"/>
-                            <constraint firstItem="JZS-4I-IrX" firstAttribute="leading" secondItem="b7N-3v-bU3" secondAttribute="leading" id="vd4-7Y-wQd"/>
                             <constraint firstItem="IGN-aX-2kG" firstAttribute="trailing" secondItem="ONa-SU-rcu" secondAttribute="trailing" id="w9S-pS-Gck"/>
-                            <constraint firstItem="JZS-4I-IrX" firstAttribute="top" secondItem="DmH-ZR-MuV" secondAttribute="bottom" constant="4" id="yBO-pC-5k6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="ONa-SU-rcu" id="qdf-h2-9Wa"/>
+                        <outlet property="facebookSigninButton" destination="DmH-ZR-MuV" id="70a-EY-HMn"/>
+                        <outlet property="googleSigninButton" destination="eYw-Cv-T2F" id="xuC-wd-4xr"/>
                         <outlet property="passwordTextField" destination="IGN-aX-2kG" id="zAo-p8-m0i"/>
                         <outlet property="retreivePasswordButton" destination="NjZ-9c-tsl" id="z4A-d9-9Ee"/>
                         <outlet property="signinButton" destination="ccL-UC-IF1" id="m9t-FE-a0o"/>

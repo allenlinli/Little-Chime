@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import GoogleSignIn
 import Firebase
 import FBSDKLoginKit
 
@@ -26,6 +24,8 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var signinButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var googleSigninButton: GIDSignInButton!
+    @IBOutlet weak var facebookSigninButton: FBSDKLoginButton!
     @IBOutlet weak var retreivePasswordButton: UIButton!
     
     override func viewDidLoad() {
@@ -48,6 +48,9 @@ class AuthViewController: UIViewController {
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         navigationController!.navigationBar.isHidden = false
+        
+        googleSigninButton.colorScheme = .dark
+        googleSigninButton.style = .wide
         
         let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("singleTapped:"))
         singleTapGestureRecognizer.cancelsTouchesInView = false

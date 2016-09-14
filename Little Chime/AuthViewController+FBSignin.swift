@@ -22,7 +22,6 @@ extension AuthViewController: FBSDKLoginButtonDelegate
             return
         }
         
-        //let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: result.token.tokenString)
         self.firebaseLogin(with: credential)
     }
