@@ -107,7 +107,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="dZK-2t-Eur" kind="show" identifier="ShowSignInNavVCID" id="q0b-kv-U0q"/>
+                        <segue destination="dZK-2t-Eur" kind="presentation" identifier="ShowSignInNavVCID" id="bSs-ho-ELg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,7 +118,7 @@
         <scene sceneID="bdg-pI-QMP">
             <objects>
                 <navigationController id="dZK-2t-Eur" customClass="AuthNavViewController" customModule="Little_Chime" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAR-an-PWg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eAR-an-PWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -212,7 +212,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="send" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="j4Z-H7-qog" id="NJ7-dd-h1M"/>
                                 </connections>
@@ -223,7 +223,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="j4Z-H7-qog" id="m7a-kt-fbR"/>
                                 </connections>

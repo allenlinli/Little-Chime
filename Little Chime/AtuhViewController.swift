@@ -45,7 +45,17 @@ class AuthViewController: UIViewController {
         }
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
         navigationController!.navigationBar.isHidden = false
+        
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("singleTapped:"))
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(singleTapGestureRecognizer)
+    }
+    
+    func singleTapped(_ sender: AnyObject) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
     }
     
     // MARK: signin
@@ -199,7 +209,6 @@ extension AuthViewController: UITextFieldDelegate
         }
         else if textField == passwordTextField {
             textField.resignFirstResponder()
-            signupWithEmail(self)
             return true
         }
         return true
@@ -233,6 +242,10 @@ extension AuthViewController: GIDSignInDelegate
                             self?.showPrompt(ofMessage: error!.localizedDescription)
                             return
                         }
+                        
+                        self?.dismiss(animated: true, completion: {
+                            
+                        })
                     })
                 }
             }
@@ -244,6 +257,10 @@ extension AuthViewController: GIDSignInDelegate
                             self?.showPrompt(ofMessage: error!.localizedDescription)
                             return
                         }
+                        
+                        self?.dismiss(animated: true, completion: {
+                            
+                        })
                     })
                 }
             }

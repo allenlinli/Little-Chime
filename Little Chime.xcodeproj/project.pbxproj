@@ -53,6 +53,7 @@
 		E90463FC1D718D1500102251 /* ChimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChimeManager.swift; sourceTree = "<group>"; };
 		E90463FE1D71A33400102251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E90464041D75242B00102251 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E94A1CB21D891790005BCC41 /* Little Chime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Little Chime.entitlements"; sourceTree = "<group>"; };
 		E9866D201D7583E8001D7291 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		E9866D221D7706AB001D7291 /* Little Chime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Little Chime-Bridging-Header.h"; sourceTree = "<group>"; };
 		E990AE4E1D7557A300E1187D /* AtuhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtuhViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		E90463F91D71817000102251 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				E94A1CB21D891790005BCC41 /* Little Chime.entitlements */,
 				E9866D221D7706AB001D7291 /* Little Chime-Bridging-Header.h */,
 				E90463D71D7165BA00102251 /* AppDelegate.swift */,
 				E90463DE1D7165BA00102251 /* Assets.xcassets */,
@@ -525,6 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Little Chime/Little Chime.entitlements";
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
 				INFOPLIST_FILE = "Little Chime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -542,6 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Little Chime/Little Chime.entitlements";
 				DEVELOPMENT_TEAM = 8Z2W5ZDA6N;
 				INFOPLIST_FILE = "Little Chime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

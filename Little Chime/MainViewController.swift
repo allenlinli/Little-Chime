@@ -17,12 +17,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    
-        
         // MARK: Auth
         //If auth is not established, then pop up SignInVC
         authStateHandle = FIRAuth.auth()?.addStateDidChangeListener{ [weak self](auth, user) in
@@ -32,15 +26,17 @@ class MainViewController: UIViewController {
                 return
             }
             
-            if let strongSelf = self
-            {
-                _ = strongSelf.navigationController?.popToViewController(strongSelf, animated: true)
-            }
+            self?.dismiss(animated: true, completion: {
+                
+            })
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    deinit {
         FIRAuth.auth()?.removeStateDidChangeListener(authStateHandle!)
     }
 }
