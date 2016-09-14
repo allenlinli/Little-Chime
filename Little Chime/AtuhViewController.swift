@@ -31,30 +31,17 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (authType == AuthType.signin) {
-            title = "Sign In"
-            signinButton.isHidden = false
-            signupButton.isHidden = true
-            retreivePasswordButton.isHidden = false
-        }
-        else {
-            title = "Sign Up"
-            signinButton.isHidden = true
-            signupButton.isHidden = false
-            retreivePasswordButton.isHidden = true
-        }
-        
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
-        navigationController!.navigationBar.isHidden = false
-        
         googleSigninButton.colorScheme = .dark
         googleSigninButton.style = .wide
         
         let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("singleTapped:"))
         singleTapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(singleTapGestureRecognizer)
+        
+        navigationController!.navigationBar.isHidden = false
     }
     
     func singleTapped(_ sender: AnyObject) {
