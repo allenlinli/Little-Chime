@@ -17,29 +17,26 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // MARK: Auth
+        //If auth is not established, then pop up SignInVC
+        authStateHandle = FIRAuth.auth()?.addStateDidChangeListener{ [weak self](auth, user) in
+            if user == nil
+            {
+                self?.performSegue(withIdentifier: "ShowSignInNavVCID", sender: self)
+                return
+            }
+            
+            self?.dismiss(animated: true, completion: {
+                
+            })
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
-        // MARK: Auth
-        //If auth is not established, then pop up SignInVC
-        authStateHandle = FIRAuth.auth()?.addStateDidChangeListener{ (auth, user) in
-            print("did addAuthStateDidChangeListener")
-            
-        }
-        
-        //if FIRAuth.currentUser
-        //}
-        
-        if FIRAuth.auth()?.currentUser == nil
-        {
-            
-        }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    deinit {
         FIRAuth.auth()?.removeStateDidChangeListener(authStateHandle!)
     }
 }

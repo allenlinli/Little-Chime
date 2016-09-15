@@ -5,18 +5,17 @@
 use_frameworks!
 # Pods for Little Chime
 pod 'Firebase'
-
 pod 'Firebase/Auth'
 
-# These are pods used for the auth providers.
-pod 'FBSDKLoginKit'
 pod 'GoogleSignIn'
+
+pod 'FBSDKCoreKit', '~> 4.15.0'
+pod 'FBSDKLoginKit', '~> 4.15.0'
+pod 'FBSDKShareKit', '~> 4.15.0'
 
 target 'Little Chime' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   
-
-
 
   target 'Little ChimeTests' do
     inherit! :search_paths
